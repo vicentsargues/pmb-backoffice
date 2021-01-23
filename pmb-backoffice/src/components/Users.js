@@ -24,8 +24,8 @@ export class Users extends React.Component{
         });
     }
     onSubmitForm() {
-        const promise = axios.get("https://localhost:44379/api/Usuario/GetEx/" + this.state.selectFilter + "=" + this.state.fname , {headers: {'Access-Control-Allow-Origin': '*'}})
-        console.log("https://localhost:44379/api/Usuario/GetEx/" + this.state.fname + "="+this.state.selectFilter )
+        const promise = axios.get("https://localhost:44233/api/Usuario/Get2/" + this.state.selectFilter + "=" + this.state.fname , {headers: {'Access-Control-Allow-Origin': '*'}})
+        console.log("https://localhost:44233/api/Usuario/Get2/" + this.state.fname + "="+this.state.selectFilter )
         const promiseResult = promise.then((resolveResult) => {
                 const result = resolveResult.data;
                 var tbody = document.getElementById('tbody');
@@ -43,7 +43,7 @@ export class Users extends React.Component{
             });
     }
     onSubmitFormAll() {
-        const promise = axios.get("https://localhost:44379/api/Usuario", {headers: {'Access-Control-Allow-Origin': '*'}})
+        const promise = axios.get("https://localhost:44233/api/Usuario", {headers: {'Access-Control-Allow-Origin': '*'}})
         const promiseResult = promise.then((resolveResult) => {
                 const result = resolveResult.data;
                 var tbody = document.getElementById('tbody');
@@ -61,7 +61,7 @@ export class Users extends React.Component{
             });
     }
     onSubmitFormDelete() {
-        const promise = axios.delete("https://localhost:44379/api/Usuario", {headers: {'Access-Control-Allow-Origin': '*'}})
+        const promise = axios.delete("https://localhost:44233/api/Usuario", {headers: {'Access-Control-Allow-Origin': '*'}})
         const promiseResult = promise.then((resolveResult) => {
             }
             , (rejectedResult) => {
